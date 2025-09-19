@@ -1,8 +1,14 @@
-let tarefas = [];
+let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
 
 const campoTarefa = document.querySelector('#campoTarefa');
 const addTarefa = document.querySelector('#addTarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
+
+function salvarStorage(){
+    const tarefasConvertidas = JSON.stringify(tarefas);
+    localStorage.setItem('tarefas', tarefasConvertidas);
+}
+
 
 addTarefa.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -28,6 +34,7 @@ function mostrarTarefas() {
         <button class="excluir" onclick="excluirTarefa(${index})">Excluir</button>
         `
         listaTarefas.appendChild(li);
+        salvarStorage()
     });
 }
 
@@ -35,6 +42,7 @@ function excluirTarefa(index){
     if(confirm("Você deseja excluir a tarefa?")){
         tarefas.splice(index, 1);
         mostrarTarefas();
+        salvarStorage()
     }
 }
 
@@ -43,6 +51,8 @@ function editarTarefa(index){
     if(novaTarefa !== null && novaTarefa.trim() !== ''){
         tarefas[index].text = novaTarefa.trim();
         mostrarTarefas();
+        salvarStorage()
+
     }
 
 }
@@ -50,4 +60,8 @@ function editarTarefa(index){
 function tarefaConcluida(index){
     tarefas[index].concluido = !tarefas[index].concluido;
     mostrarTarefas();
+        salvarStorage()
+
 }
+
+mostrarTarefas()
