@@ -17,14 +17,14 @@ O objetivo é criar uma aplicação simples de **Lista de Tarefas**, aplicando c
 
 ## 📂 Estrutura do Projeto
 
-📦 to-do-list
-┣ 📂 assets
-┃ ┣ 📂 css
-┃ ┃ ┗ 📜 styles.css
-┃ ┣ 📂 js
-┃ ┃ ┗ 📜 script.js
-┣ 📜 index.html
-┗ 📜 README.md
+- 📦 to-do-list
+- ┣ 📂 assets
+- ┃ ┣ 📂 css
+- ┃ ┃ ┗ 📜 styles.css
+- ┃ ┣ 📂 js
+- ┃ ┃ ┗ 📜 script.js
+- ┣ 📜 index.html
+- ┗ 📜 README.md
 
 
 - **index.html** → Estrutura da aplicação (campo de entrada, botão e lista de tarefas).  
